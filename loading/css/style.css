@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+/*
+VARIABLES
+================================================ */
+:root {
+  --light-green: #d5edeb;
+  --green: #63dbd0;
+  --brown: #403632;
+  --light-grey: #eee;
+  --white: #fff;
+  --oswald-font: "Oswald", sans-serif;
+}
+
+/*
+GENERAL STYLING
+================================================ */
+body {
+  color: var(--brown);
+  background: url("../images/bg-shadow.jpg") no-repeat right bottom / cover fixed;
+  text-align: center;
+}
+
+/*
+COMMON
+================================================ */
+p {
+  line-height: 1.7;
+}
+img {
+  max-width: 100%;
+}
+.title {
+  font-family: var(--oswald-font);
+  font-size: min(10vw, 4rem);
+  margin-bottom: 2rem;
+}
+/*
+LOADING
+================================================ */
+#loading {
+  background-color: var(--light-green);
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+}
+#loading-screen {
+  background-color: var(--light-green);
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  translate: 0 100vh;
+}
+#loading p {
+  font-size: 2rem;
+  font-family: var(--oswald-font);
+}
+
+/*
+HERO
+================================================ */
+.hero {
+  height: 100vh;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  width: 50%;
+  height: 100vh;
+  background: url("../images/bg-hero.jpg") no-repeat center / cover;
+  position: absolute;
+  inset: 0;
+}
+.hero .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 2;
+  width: 100%;
+  font-size: max(12vw, 3rem);
+  line-height: 1.2;
+}
+
+/*
+DESKTOP SIZE
+================================================ */
+@media (min-width: 800px) {
+  /* COMMON */
+  .title {
+    margin-bottom: 3rem;
+  }
+}
